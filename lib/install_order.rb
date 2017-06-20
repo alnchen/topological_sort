@@ -10,5 +10,15 @@
 
 
 def install_order(arr)
+  values = (1..arr.flatten.max).to_a
+  vertices = values.map { |val| Vertex.new(val) }
+
+  arr.each do |tuple|
+    package, dependency = vertices[tuple[0] - 1], vertices[tuple[1] - 1]
+    Edge.new(dependency, package)
+  end
+
+  sorted = topological_sort(vertices)
+  sorted.map(&:value)
 
 end
