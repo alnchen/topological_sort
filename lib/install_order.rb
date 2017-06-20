@@ -14,11 +14,10 @@ def install_order(arr)
   vertices = values.map { |val| Vertex.new(val) }
 
   arr.each do |tuple|
-    package, dependency = vertices[tuple[0] - 1], vertices[tuple[1] - 1]
+    dependency = vertices[tuple[1] - 1]
+    package = vertices[tuple[0] - 1]
     Edge.new(dependency, package)
   end
 
-  sorted = topological_sort(vertices)
-  sorted.map(&:value)
-
+  topological_sort(vertices).map(&:value)
 end
