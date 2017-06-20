@@ -6,7 +6,6 @@ class Vertex
     @in_edges = []
     @out_edges = []
   end
-
 end
 
 class Edge

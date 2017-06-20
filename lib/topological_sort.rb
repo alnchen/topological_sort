@@ -20,6 +20,7 @@ def topological_sort(vertices)
       in_edge_counts[edge.to_vertex] -= 1
       queue.push(edge.to_vertex) if in_edge_counts[edge.to_vertex] == 0
     end
+    
   end
 
   sorted
