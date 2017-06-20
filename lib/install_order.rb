@@ -6,9 +6,6 @@
 # N.B. this is how `npm` works.
 
 # Import any files you need to
-
-
-
 def install_order(arr)
   values = (1..arr.flatten.max).to_a
   vertices = values.map { |val| Vertex.new(val) }
